@@ -1,0 +1,39 @@
+public class Main {
+
+	public static void main(String[] args) {
+
+		int[] input = { 3, 4, 5, 6, 5 };
+
+		int[] b = cyclicRotate(input);
+
+		int[] c = cyclicRotate(b);
+
+		for (int x = 0; x < c.length; x++) {
+			System.out.print(c[x]);
+		}
+
+	}
+
+	public static int[] cyclicRotate(int[] input) {
+
+		int lastInteger = input[input.length - 1];
+
+		int temp = input[0];
+
+		input[0] = lastInteger;
+
+		for (int i = 1; i < input.length; i++) {
+
+			int j = input[i];
+
+			input[i] = temp;
+
+			temp = j;
+
+		}
+
+		return input;
+
+	}
+
+}
